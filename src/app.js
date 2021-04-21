@@ -14,11 +14,11 @@ app.get("/repositories", (request, response) => {
 });
 
 app.post("/repositories", (request, response) => {
-  const { title, url, techs } = request.body; //request body pega o que o usuário inseriu e executa de acordo com a rota.
+  const { title, url, techs } = request.body;
 
-    const repository = { id: uuid(), title, url, techs, likes:0 }; //inserindo os dados digitados dentro da variável repository.
+    const repository = { id: uuid(), title, url, techs, likes:0 };
 
-    repositories.push(repository); //pegando a variável e jogando no vetor.
+    repositories.push(repository);
 
     return response.json(repository);
 });
@@ -46,7 +46,7 @@ app.put("/repositories/:id", (request, response) => {
 });
 
 app.delete("/repositories/:id", (request, response) => {
-  const { id } = request.params; //request params busca alguma informação pesquisada em filtro.
+  const { id } = request.params;
 
   const repositoryIndex = repositories.findIndex(repository => repository.id === id);
  
